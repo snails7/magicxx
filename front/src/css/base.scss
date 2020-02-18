@@ -1,0 +1,48 @@
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.w3-jumbo {
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.mybody {
+  margin: 25px 400px 25px 400px;
+}
+
+.polaroid {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+.mycontainer {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.more {
+  color: #878787;
+
+  .pub-time{
+    float: right;
+    margin-left: 20px;
+  }
+
+  .author{
+    float: right;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+

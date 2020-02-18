@@ -1,0 +1,38 @@
+{% extends 'news/base/base_details.html' %}
+
+{% block title %}
+{{ news.title }}
+{% endblock %}
+
+{% block big_title %}
+{{ news.title }}
+{% endblock %}
+
+{% block bgimgs %}
+.bgimg-1 {
+  background-image: url('{{ news.thumbnail }}');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("{{ news.thumbnail }}");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("{{ news.thumbnail }}");
+  min-height: 400px;
+}
+{% endblock %}
+
+{% block content %}
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+<H3>{{ news.desc }}</H3>
+ {{ news.content|safe }}
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'cms/base/base.html' %}
+{% load news_filters %}
+
+{% block title %}
+Newslists
+{% endblock %}
+
+{% block blank_page %}
+Newslists
+{% endblock %}
+
+{% block goeshere %}
+Show all published list here
+{% endblock %}
+
+
+{% block content %}
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Pub_time</th>
+                    <th>Author</th>
+                    <th>Operate</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for news in newses %}
+                    <tr>
+                        <td><a target="_blank" href="{% url 'news:news_detail' news_id=news.pk %}"> {{ news.title }}</a></td>
+                        <td>{{ news.category.name }}</td>
+                        <td>{{ news.pub_time|time_since }}</td>
+                        <td>Magicxx</td>
+                        <td>
+                            <a href="{% url 'cms:edit_news' %}?news_id={{ news.pk }}" class="btn btn-info btn-xs">Edit</a>
+                            <button class="btn btn-danger btn-xs delete-btn" data-news-id="{{ news.pk }}">Delete</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+
+
+            </table>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+
+{% block categoryjs %}
+    <script src="{% static 'js/news_list.js' %}"></script>
+{% endblock %}

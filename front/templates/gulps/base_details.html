@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<title>MyTemplate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../dist/css/w3.css">
+<link rel="stylesheet" href="../../dist/css/base_details.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="../../dist/css/css/all.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('http://q4yvnswcm.bkt.clouddn.com/user2-160x160-18.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("http://q4yvnswcm.bkt.clouddn.com/user2-160x160-21.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("http://q4yvnswcm.bkt.clouddn.com/user2-160x160-24.jpg");
+  min-height: 400px;
+}
+
+.w3-jumbo {
+    font-family: 'fz';
+}
+
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+@font-face {
+    font-family: fz;
+    src: url("../../dist/font/FZSXSGYSJW.TTF");
+}
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+     <h1 class="w3-jumbo">川西小环线，风景在路上</h1>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <p>本次 泰国 行很仓促，总之机缘巧合最后临时定了机票酒店车子
+基本上俩个晚上，我们两 家朋 友一起网上看看，就全搞定了
+虽然很仓促，但是依旧很期待
+      因为确实没去过 泰国 ，最关键最开始我并不想去哪里，哈哈哈，仅仅是因为暑假实在没啥更好的计划了</p>
+
+    <p><b>出行情况：</b><br>
+1、家庭出行，一家三口。两家一起出行，共⑥人，一个9岁一个6岁的男娃。<br>
+2、出行日期：2019年7月17日到7月29日<br>
+    3、出行天数：13天，飞至 清迈 ，租车到普吉，从 普吉岛 飞回。</p>
+
+    <p><b>行程安排：</b><br>
+Day.① 7.17 下午五点多起飞至 清迈 ，大概十点多抵达酒店。<br>
+Day.② 7.18 取第一部车， 清迈 市内游玩，双龙寺，打靶，夜间动物园<br>
+Day.③ 9.19 出发 曼谷 ，开车一天，700公里。游拉差达帐篷夜市。<br>
+Day.④ 9.20 四面佛，大皇宫，王权 云顶 ，摩天轮夜市<br>
+Day.⑤ 9.21 出发芭堤雅，150公里<br>
+Day.⑥ 9.22 芭堤雅王权，出发 华欣 350公里，最难走的一段路<br>
+Day.⑦ 9.23 出发普吉，途径 素叻他尼 ，抵达普吉退一部车<br>
+Day.⑧ 9.24 奈德大象营地，下午海边游泳<br>
+Day.⑨ 9.25 出海，晚上入住悦榕庄<br>
+Day.⑩ 9.26 悦榕庄玩，逛奥特莱斯<br>
+Day.11 9.27 版赞海鲜市场<br>
+Day.12 9.28 乐 古浪 海滩游玩 王权免税店购物，退车去机场<br>
+Day.13 9.29 凌晨飞机回家啦</p>
+
+    <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" width="100%">
+    <p>漂亮的油菜花</p>
+    <img src="http://q4yvnswcm.bkt.clouddn.com/magicxx.jpg" width="100%">
+    <p>好搭的热气球，好像就只能飞那么高</p>
+    <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" width="100%">
+
+
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">出发时间</span><br>
+    2019-7-28
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">出行天数</span><br>
+    17 Days
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">人物</span><br>
+    Family Trip
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">人均费用</span><br>
+    20 K
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">Our Memories</h3>
+  <p class="w3-center"><em>Here are some of our trips in the past happy times.<br> Click on the images to quickly transfer</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="http://q4yvnswcm.bkt.clouddn.com/user2-160x160-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">Comments</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

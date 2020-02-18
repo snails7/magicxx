@@ -1,0 +1,119 @@
+{% extends 'cms/base/base.html' %}
+
+{% block title %}
+    {% if news %}
+        Edit news
+    {% else %}
+        Publish news
+    {% endif %}
+{% endblock %}
+
+
+{% block blank_page %}
+    <h1>
+    {% if news %}
+        Edit here!
+    {% else %}
+        Publish here!
+    {% endif %}
+    </h1>
+{% endblock %}
+
+{% block goeshere %}
+Share and enjoy!
+{% endblock %}
+
+
+{% block content %}
+
+         <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title"><b>发布游记：</b></h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+              <i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+            <div class="form-group">
+                <label for="title-form">标题</label>
+                {% if news %}
+                    <input type="text" class="form-control" name="title" id="title-form" value="{{ news.title }}">
+                {% else %}
+                    <input type="text" class="form-control" name="title" id="title-form">
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="category-form">分类</label>
+                <select name="category" id="category-form" class="form-control">
+                    {% for category in categories %}
+                        {% if news %}
+                            <option value="{{ category.pk }}" selected>{{ category.name }}</option>
+                        {% else %}
+                            <option value="{{ category.pk }}">{{ category.name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                    
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="desc-form">描述</label>
+                {% if news %}
+                    <input type="text" class="form-control" id="desc-form" name="desc" value="{{ news.desc }}">
+                {% else %}
+                    <input type="text" class="form-control" id="desc-form" name="desc">
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="thumbnail-form">封面图片</label>
+                <div class="input-group">
+                    {% if news %}
+                        <input type="text" class="form-control" id="thumbnail-form" name="thumbnail" value="{{ news.thumbnail }}">
+                    {% else %}
+                        <input type="text" class="form-control" id="thumbnail-form" name="thumbnail">
+                    {% endif %}
+                    <span class="input-group-btn">
+                        <label class="btn btn-default btn-file">
+                            上传图片<input hidden type="file" class="btn btn-default" id="thumbnail-btn">
+                        </label>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="content-form">内容</label>
+                {% if news %}
+                    <script id="editor" type="text/plain">{{ news.content|safe }}</script>
+                {% else %}
+                    <script id="editor" type="text/plain"></script>
+                {% endif %}
+            </div>
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <button id="submit-btn" data-news-id="{{ news.pk }}" class="btn btn-primary pull-right">发布游记</button>
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+
+{% endblock %}
+
+{% block categoryjs %}
+    <script src="{% static 'ueditor/ueditor.config.js' %}"></script>
+    <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
+    <script src="{% static 'js/write_news.min.js' %}"></script>
+{% endblock %}
