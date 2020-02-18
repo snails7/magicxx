@@ -1,0 +1,50 @@
+{% extends 'news/base/base.html' %}
+{% load news_filters %}
+
+{% block title %}
+Magicxx
+{% endblock %}
+
+{% block style %}
+<style>
+    .bgimg{background-image:url(http://127.0.0.1:8000/media/IMG_20200123_101214.jpg)}
+</style>
+{% endblock %}
+
+{% block space_name %}
+Magicxx & Snails7
+{% endblock %}
+
+{% block space_subname %}
+beautiful memory and life gallery
+{% endblock %}
+
+{% block w3_content %}
+
+
+{% for news in newses %}
+<div class="w3-content">
+
+<div class="w3-row w3-margin box2">
+
+<div class="w3-third">
+    <a href="{% url 'news:news_detail' news_id=news.pk %}">
+        <img src="{{ news.thumbnail }}" style="width:100%;min-height:200px"></a>
+</div>
+<div class="w3-twothird w3-container box1">
+    <h2><a href="{% url 'news:news_detail' news_id=news.pk %}"> {{ news.title }}</a></h2>
+  <p>
+      {{ news.desc }}
+  </p>
+  <p class="more">
+      <span class="category">{{ news.category.name}}</span>
+      <span class="pub-time">{{ news.pub_time|time_since }}</span>
+      <span class="author">Magicxx</span>
+  </p>
+</div>
+
+</div>
+</div>
+{% endfor %}
+
+{% endblock %}
