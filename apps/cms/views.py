@@ -10,14 +10,14 @@ from django.views.generic import View
 # Create your views here.
 
 class WriteNewsView(View):
-    def get(self,request):
+    def get(self, request):
         categories = NewsCategory.objects.all()
         context = {
             'categories': categories
         }
         return render(request, 'cms/index.html', context=context)
 
-    def post(self,request):
+    def post(self, request):
         form = WriteNewsForm(request.POST)
         if form.is_valid():
             title = form.cleaned_data.get('title')
